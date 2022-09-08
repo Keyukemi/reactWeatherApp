@@ -1,4 +1,5 @@
 import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from "react-accessible-accordion"
+import "./forecastweather.css";
 
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const ForecastWeather = ({ data }) => {
@@ -24,7 +25,11 @@ const ForecastWeather = ({ data }) => {
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>
-                        <AccordionItemPanel></AccordionItemPanel>
+                        <AccordionItemPanel>
+                            <div>
+                                
+                            </div>
+                        </AccordionItemPanel>
                     </AccordionItem>
                 ))}
             </Accordion>
