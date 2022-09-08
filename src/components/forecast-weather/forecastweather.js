@@ -7,11 +7,9 @@ const ForecastWeather = ({ data }) => {
     const Today = new Date().getDay();
     const forecastDays = WEEK_DAYS.slice(Today, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, Today));
 
-    console.log(forecastDays);
-
     return (
         <>
-            <label htmlFor="" className="title"> Daily </label>
+            <label htmlFor="" className="title"> </label>
             <Accordion allowZeroExpanded>
                 {data.list.splice(0, 7).map((item, idx) => (
                     <AccordionItem key={idx}>
@@ -26,8 +24,31 @@ const ForecastWeather = ({ data }) => {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <div>
-                                
+                            <div className="daily-details-grid">
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Pressure:</label>
+                                    <label htmlFor="">{item.main.pressure} hPa</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Feels Like:</label>
+                                    <label htmlFor="">{Math.round(item.main.feels_like)}°C</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Humidity:</label>
+                                    <label htmlFor="">{item.main.humidity}%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Clouds:</label>
+                                    <label htmlFor="">{item.clouds.all}%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Wind Speed:</label>
+                                    <label htmlFor="">{item.wind.speed} m/s</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label htmlFor="">Sea Level:</label>
+                                    <label htmlFor="">{item.main.sea_level} metres</label>
+                                </div>
                             </div>
                         </AccordionItemPanel>
                     </AccordionItem>
